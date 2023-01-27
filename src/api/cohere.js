@@ -1,6 +1,7 @@
-const COHERE_API_KEY = 'qmzKWceiz1Kq72PIw7eGqjQwxBhbcvknvCWS3dV7'
 
-export const getDraft = (topic) => {
+const apikey = import.meta.env.PUBLIC_COHERE_APIKEY
+
+export const getDraft = async (topic) => {
 
   const data = {
     model: 'command-xlarge-20221108',
@@ -15,19 +16,17 @@ export const getDraft = (topic) => {
     return_likelihoods: 'NONE'
   }
 
-  return fetch("https://api.cohere.ai/generate", {
+  const rawGeneration = await fetch("https://api.cohere.ai/generate", {
     method: 'POST',
     headers: {
-      Authorization: `BAERER ${COHERE_API_KEY}`,
+      Authorization: `BAERER ${apikey}`,
       "Content-Type": "application/json",
       "Cohere-Version": '2022-12-06'
     },
     body: JSON.stringify(data)
-  }).then((data) => {
-    return data.json()
-  }).then(g => {
-    const { generations } = g;
-    const draft = generations[0].text
-    return draft
   })
+  const g = await rawGeneration.json()
+  const { generations } = g
+  const draft = generations[0].text
+  return draft
 }
