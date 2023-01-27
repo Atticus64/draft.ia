@@ -1,5 +1,5 @@
 
-const apikey = import.meta.env.PUBLIC_COHERE_APIKEY
+const apikey = import.meta.env.COHERE_APIKEY
 
 export const getDraft = async (topic) => {
 
