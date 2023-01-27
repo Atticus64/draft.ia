@@ -1,8 +1,10 @@
 
-export function Button({ children, onClick }){
+export function Button({ children, ...props }){
   return (
-    <button onClick={onClick} className="hover:bg-blue-400 hover:p-5 transition-all p-3 bg-blue-200">
-      <b>{children}</b>
-    </button>
-  )
+		<button 
+      {...props}
+			className={`m-4 hover:bg-blue-400 transition-all p-3 bg-blue-200 font-bold ${props.className}`}>
+			{children}
+		</button>
+	)
 }
