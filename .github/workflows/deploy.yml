@@ -18,7 +18,7 @@ jobs:
         run: npm i -g pnpm
 
       - name: Install dependencies
-        run: pnpm ci
+        run: pnpm install
 
       - name: Build Astro
         run: pnpm run build
