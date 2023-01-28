@@ -1,6 +1,6 @@
-import { Draft } from "./Draft"
 import { Button } from "./Button"
 import { useState } from "react"
+import { Draft } from "./Draft"
 
 export default function Form(){
   const [topic, setTopic] = useState("")
@@ -14,11 +14,10 @@ export default function Form(){
   }
 
   return (
-    <section className="flex justify-center flex-col mx-1">
-      <form>
-        <input autoFocus placeholder="type your topic" className="p-4 mx-2 input" type="text" /> 
-        {/* <Draft client:load topic={"history of JavaScript"} /> */}
-        <Button onClick={handleClick} className="hover:scale-125">
+    <section className="flex justify-center flex-col max-w-sm">
+      <form className="grid place-content-center ">
+        <textarea style={{"resize": "none"}} autoFocus placeholder="type your topic" className="w-80 h-24 p-4 input" type="text" /> 
+        <Button onClick={handleClick} className="hover:scale-110 w-80">
           Send
         </Button>
       </form>
