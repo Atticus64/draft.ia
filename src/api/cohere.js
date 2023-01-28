@@ -1,7 +1,4 @@
 
-// const apikey = import.meta.env.COHERE_TOKEN
-// console.log(apikey)
-
 export const getDraft = async (topic) => {
   const apikey = import.meta.env.PUBLIC_COHERE_APIKEY
 
