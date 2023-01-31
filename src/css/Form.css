@@ -1,12 +1,18 @@
 
 .activated {
   background-color: #bae6fd;
+  width: 12rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
 
+.btn-copy:hover {
+  transform: scale(1.20);
 }
 
 .activated:hover {
   background-color: #60a5fa;
-  transform: scale(1.10);
+  transform: rotate(-10deg) scale(1.03);
 }
 
 .prompt-preview {
@@ -15,6 +21,9 @@
 
 .disable {
   background-color: #cecece;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+   width: 12rem;
 }
 
 

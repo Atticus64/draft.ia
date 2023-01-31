@@ -55,8 +55,9 @@ export default function Form(){
   
   return (
     <>
-      <section className="flex justify-center flex-col max-w-sm">
+      <section className="grid justify-items-center flex-col max-w-sm">
           <Modal/>
+          <h2 className="font-semibold text-3xl">Draft on the fly</h2>
           <form className="grid place-content-center ">
             <label htmlFor="topic">Topic</label>
             <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa history" className="w-80 h-24 p-4 input" type="text" /> 
@@ -65,14 +66,16 @@ export default function Form(){
               <input type="checkbox" id="detail" className="detail" />
             </div>
             <label htmlFor="prompt">Prompt</label>
-            <div className="p-2 m-4 justify-center align-middle prompt-preview" id="prompt" >
-              <h2>{iaPrompt}{data}</h2>
+            <div className="m-2 justify-center align-middle prompt-preview" id="prompt" >
+              <h5>{iaPrompt}{data}</h5>
             </div>
-            <Button onClick={handleClick} className="w-80 send activated">
-              Send
-            </Button>
           </form>
         </section>
+        <div className="flex justify-center align-bottom">
+          <Button onClick={handleClick} className="w-80 send activated">
+            Send
+          </Button>
+        </div>
       <Draft topic={topic} options={options} />
     </>
   )

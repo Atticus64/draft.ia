@@ -6,6 +6,12 @@
   margin: 1rem;
 }
 
+.prompt {
+  max-width: 23rem;
+  max-height: 16rem;
+  overflow: auto;
+}
+
 .container {
   display: flex;
   justify-content: center;
