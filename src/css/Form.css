@@ -9,6 +9,9 @@
   transform: scale(1.10);
 }
 
+.prompt-preview {
+  width: 15rem;
+}
 
 .disable {
   background-color: #cecece;

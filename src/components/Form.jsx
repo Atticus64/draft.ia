@@ -1,12 +1,19 @@
 import { Button } from "./Button"
-import { useState } from "react"
+import { useState, ref } from "react"
+import React from "react"
 import { Draft } from "./Draft"
 import '../css/Form.css' 
 import { Modal } from "./Modal"
+import { TopicContext } from "../context/TopicContext"
+import { useContext } from "react"
+import { useForm } from "react-hook-form"
 
 export default function Form(){
 
-  const [topic, setTopic] = useState("")
+  const  { topic, updateTopic, iaPrompt, updateAiprompt } = useContext(TopicContext)
+  const { register, watch } = useForm();
+  const data = watch('name')
+
   const [options, setOptions] = useState({
     reload: false,
     detailed: false
@@ -41,26 +48,34 @@ export default function Form(){
       })
     }
      
-    
-    setTopic(input)
+    updateTopic(input)
     btn.disabled = true
   }
 
+  
   return (
-    <section className="flex justify-center flex-col max-w-sm">
-      <Modal/>
-      <form className="grid place-content-center ">
-        <textarea required style={{"resize": "none"}} autoFocus placeholder="type your topic" className="w-80 h-24 p-4 input" type="text" /> 
-        <div className="p-2 m-4 border-gray-300 border w-40">
-          <input type="checkbox" name="scales" className="detail" />
-          <label htmlFor="scales"> Detailed </label>
-        </div>
-        <Button onClick={handleClick} className="w-80 send activated">
-          Send
-        </Button>
-      </form>
+    <>
+      <section className="flex justify-center flex-col max-w-sm">
+          <Modal/>
+          <form className="grid place-content-center ">
+            <label htmlFor="topic">Topic</label>
+            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa history" className="w-80 h-24 p-4 input" type="text" /> 
+            <div className="p-2 m-4 border-gray-300 border w-40">
+              <label htmlFor="detail"> Detailed </label>
+              <input type="checkbox" id="detail" className="detail" />
+            </div>
+            <label htmlFor="prompt">Prompt</label>
+            <div className="p-2 m-4 justify-center align-middle prompt-preview" id="prompt" >
+              <h2>{iaPrompt}{data}</h2>
+            </div>
+            <Button onClick={handleClick} className="w-80 send activated">
+              Send
+            </Button>
+          </form>
+        </section>
       <Draft topic={topic} options={options} />
-    </section>
+    </>
   )
+
 }
 

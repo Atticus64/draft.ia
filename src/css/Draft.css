@@ -21,6 +21,7 @@
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
+
 .loader::after,
 .loader::before {
   content: '';
@@ -28,11 +29,43 @@
   border-radius: inherit ;
 }
 
-.loader::before {
+.green::before {
+  width:  100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, rgb(173, 231, 36) 0%, rgb(117, 200, 235) 100%);
+}
+
+.orange::before {
+  width:  100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, rgb(238, 250, 107) 0%,rgb(238, 190, 33) 100%);
+}
+
+.purple::before {
   width:  100%;
   height: 100%;
   background-image: linear-gradient(0deg, #f0c 0%, #80f 100%);
 }
+
+.red::before {
+  width:  100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, rgb(245, 106, 20) 0%, rgb(245, 143, 96) 100%);
+}
+
+.gray::before {
+  width:  100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, rgb(114, 108, 105) 0%, rgb(185, 185, 185) 100%);
+}
+
+.blue::before {
+  width:  100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, rgb(29, 44, 244) 0%, rgb(63, 199, 252) 100%);
+}
+
+
 
 .loader::after {
   width:  85%;

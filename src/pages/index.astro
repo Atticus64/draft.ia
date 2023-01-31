@@ -1,14 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { Button } from "../components/Button"
-import Form from "../components/Form"
+import App from "../components/App"
 ---
 
 <Layout title="Draft.ia">
   <main class="flex justify-center flex-col items-center">
     <h1>Draft.ia</h1>
-    <Form client:load />
-    <!-- <Button client:load>click me!</Button> -->
+    <App client:load />
   </main>
 </Layout>
 
