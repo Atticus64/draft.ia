@@ -1,0 +1,19 @@
+
+.activated {
+  background-color: #bae6fd;
+
+}
+
+.activated:hover {
+  background-color: #60a5fa;
+  transform: scale(1.10);
+}
+
+
+.disable {
+  background-color: #cecece;
+}
+
+
+
+

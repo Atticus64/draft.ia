@@ -1,0 +1,8 @@
+
+
+
+.modal-container {
+  display: flex;
+  padding: 22rem;
+  flex-direction: column;
+}
