@@ -2,6 +2,8 @@
 export const getDraft = async (topic, prompt_alternative) => {
   const apikey = import.meta.env.PUBLIC_COHERE_APIKEY
 
+  if (topic === '') return
+
   const prompt = prompt_alternative ?? `generate a draft about the topic ${topic}`
 
   const data = {
