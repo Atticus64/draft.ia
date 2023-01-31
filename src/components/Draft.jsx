@@ -1,19 +1,21 @@
 import { useDraft } from '../hooks/useDraft'
 import '../css/Draft.css'
 
-export function Draft({ topic }){
+export function Draft({ topic, options }){
+
+  const { isLoadingDraft, draft } = useDraft(topic, options)
   
   if ( topic === "" ) {
     return (
-      <div className='container-loader'>
-        <h1>Aun no has generado un draft</h1>
+      <div >
       </div>
     )
   } 
+
   
-  const { isLoadingDraft, draft } = useDraft(topic)
  
   if ( isLoadingDraft ){
+
     return (
       <div className='container-loader'>
         <h3>Loading draft...</h3>
@@ -21,8 +23,9 @@ export function Draft({ topic }){
       </div>
     )
   }
-
+  
   return (
+
     <section className='container'>
       <p> {draft} </p>
     </section>

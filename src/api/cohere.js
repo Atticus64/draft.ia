@@ -1,10 +1,12 @@
 
-export const getDraft = async (topic) => {
+export const getDraft = async (topic, prompt_alternative) => {
   const apikey = import.meta.env.PUBLIC_COHERE_APIKEY
+
+  const prompt = prompt_alternative ?? `generate a draft about the topic ${topic}`
 
   const data = {
     model: 'command-xlarge-20221108',
-    prompt: `generate a draft about the topic ${topic}`,
+    prompt,
     max_tokens: 300,
     temperature: 0.8,
     k: 0,
