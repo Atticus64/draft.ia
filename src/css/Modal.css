@@ -1,8 +1,9 @@
 
-
-
 .modal-container {
   display: flex;
-  padding: 22rem;
+  color: red;
+  height: 100;
+  width: 100;
   flex-direction: column;
 }
+

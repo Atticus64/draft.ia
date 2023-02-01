@@ -99,8 +99,18 @@ export default function Form(){
   return (
     <>
       <section className="grid justify-items-center flex-col max-w-sm">
-          <Modal idn="topic" message="Missing name of topic" />
-          <Modal idn="draft" message="No Draft to copy"  />
+          <Modal 
+            idn="topic"
+            message="Missing name of topic" 
+            width="w-44"
+            height="h-44"
+            />
+          <Modal 
+            height="h-30"
+            width="w-44"
+            idn="draft" 
+            message="No Draft to copy"  
+          />
           <h2 className="font-semibold text-3xl">Draft on the fly</h2>
           <form className="grid place-content-center ">
             <label htmlFor="topic" className="mt-2">Topic</label>
