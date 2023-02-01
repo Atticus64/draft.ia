@@ -2,7 +2,6 @@ import { useDraft } from '../hooks/useDraft'
 import '../css/Draft.css'
 import { useContext } from 'react'
 import { TopicContext } from '../context/TopicContext'
-import { Button } from './Button'
 
 export function Draft({ options }){
   
@@ -49,7 +48,7 @@ export function Draft({ options }){
 
     <section className='container p-2'>
       <h4 className='text-2xl font-bold'>Draft generated for {topic} topic</h4>
-      <p className='border to-blue-100 prompt'> {draft} </p>
+      <p className='border to-blue-100 draft'> {draft} </p>
     </section>
   )
 
