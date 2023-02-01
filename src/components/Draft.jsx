@@ -50,9 +50,6 @@ export function Draft({ options }){
     <section className='container p-2'>
       <h4 className='text-2xl font-bold'>Draft generated for {topic} topic</h4>
       <p className='border to-blue-100 prompt'> {draft} </p>
-      <button>
-        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2v2Z"/></svg>
-      </button>
     </section>
   )
 

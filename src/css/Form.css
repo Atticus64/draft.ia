@@ -12,7 +12,7 @@
 
 .activated:hover {
   background-color: #60a5fa;
-  transform: rotate(-10deg) scale(1.03);
+  transform: scale(1.05);
 }
 
 .prompt-preview {
