@@ -8,6 +8,7 @@ specifiers:
   '@types/react-dom': ^18.0.10
   astro: ^2.0.2
   astro-icon: ^0.8.0
+  canvas-confetti: ^1.6.0
   react: ^18.2.0
   react-dnd: ^14.0.2
   react-dnd-html5-backend: ^14.0.0
@@ -24,6 +25,7 @@ dependencies:
   '@types/react-dom': 18.0.10
   astro: 2.0.2
   astro-icon: 0.8.0
+  canvas-confetti: 1.6.0
   react: 18.2.0
   react-dnd: 14.0.5_3stiutgnnbnfnf3uowm5cip22i
   react-dnd-html5-backend: 14.1.0
@@ -1105,6 +1107,10 @@ packages:
 
   /caniuse-lite/1.0.30001448:
     resolution: {integrity: sha512-tq2YI+MJnooG96XpbTRYkBxLxklZPOdLmNIOdIhvf7SNJan6u5vCKum8iT7ZfCt70m1GPkuC7P3TtX6UuhupuA==}
+    dev: false
+
+  /canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==}
     dev: false
 
   /ccount/2.0.1:

@@ -4,15 +4,16 @@ import React from "react"
 import { Draft } from "./Draft"
 import '../css/Form.css' 
 import { Modal } from "./Modal"
-import '../../public/hint.css'
 import { TopicContext } from "../context/TopicContext"
 import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { useEffect } from "react"
+import confetti from "canvas-confetti"
 
 function updateClipboard(newClip) {
   navigator.clipboard.writeText(newClip).then(() => {
     /* clipboard successfully set */
+    confetti()
   }, (err) => {
     draftHtml
     /* clipboar updateClipboard()d write failed */

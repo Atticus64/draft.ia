@@ -41,12 +41,9 @@ export function Draft({ options }){
     )
   }
 
- 
-  
-  
   return (
 
-    <section className='container p-2'>
+    <section className='container p-2 draft'>
       <h4 className='text-2xl font-bold'>Draft generated for {topic} topic</h4>
       <p className='border to-blue-100 draft'> {draft} </p>
     </section>
