@@ -1,10 +1,10 @@
-# Draft.ia
+# Draft.ia :pencil2: :notebook_with_decorative_cover:
 
 Generate drafts of any topic on the fly.
 
 * Useful tool to create drafts to initialize your *blog*, *investigation*, *etc*
 
-## Example
+## Example :eyeglasses:
 
 * Prompt: generate a draft about the topic javascript language
 
