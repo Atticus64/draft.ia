@@ -98,7 +98,7 @@ export default function Form(){
   
   return (
     <>
-      <section className="grid justify-items-center flex-col max-w-sm">
+      <section className="grid max-w-sm">
           <Modal 
             idn="topic"
             message="Missing name of topic" 
@@ -111,14 +111,14 @@ export default function Form(){
             idn="draft" 
             message="No Draft to copy"  
           />
-          <h2 className="font-semibold text-3xl">Draft on the fly</h2>
+          <h2 className="font-semibold text-3xl">Draft on the fly!!</h2>
           <form className="grid place-content-center ">
             <label htmlFor="topic" className="mt-2">Topic</label>
-            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa history" className="w-80 h-24 p-4 input" type="text" /> 
+            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa" className="w-80 h-24 p-4 input" type="text" /> 
             <label htmlFor="prompt" className="mt-2">Prompt</label>
           </form>
-          <div className="flex justify-center align-bottom">
-            <blockquote className="p-2 justify-center align-middle prompt-preview my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800" id="prompt" >
+          <div className="flex flex-row">
+            <blockquote className="p-2 justify-center align-middle prompt-preview border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800" id="prompt" >
               <p className="prompt-user bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">{iaPrompt}{data}</p>
             </blockquote>
             <button className="p-4 hint--right" onClick={handleEditPrompt} aria-label="Edit prompt">
@@ -126,7 +126,7 @@ export default function Form(){
             </button>
           </div>
         </section>
-        <div className="flex justify-center align-bottom">
+        <div className="flex align-bottom">
           <Button onClick={handleClick} className="w-80 send activated">
             Send
           </Button>
