@@ -2,13 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: auto;
   flex-direction: column;
   margin: 1rem;
 }
 
+.paragraph {
+  width: 40ch;
+}
+
 .draft {
   max-height: 16rem;
-  max-width: 24rem;
+  max-width: 60ch;
   overflow: auto;
 }
 

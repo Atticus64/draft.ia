@@ -1,12 +1,8 @@
 import { useDraft } from '../hooks/useDraft'
 import '../css/Draft.css'
-import { useContext } from 'react'
-import { TopicContext } from '../context/TopicContext'
-
 export function Draft({ options }){
   
   const { isLoadingDraft, draft, topic } = useDraft( options )
-  const { iaPrompt } = useContext(TopicContext)
 
   if ( !topic ) {
     return (
@@ -36,17 +32,19 @@ export function Draft({ options }){
       <div className='container-loader'>
         <h3>Generating draft...</h3>
         <div className={`loader ${color}`}></div>
-        <h4>{phrases[number]}</h4>
+        <p className='paragraph'>{phrases[number]}</p>
       </div>
     )
   }
 
   return (
 
-    <section className='container p-2 draft'>
-      <h4 className='text-2xl font-bold'>Draft generated for {topic} topic</h4>
-      <p className='border to-blue-100 draft'> {draft} </p>
-    </section>
+    <>
+      <section className='container p-2 m-4 draft justify-center'>
+        <h4 className='text-2xl font-bold'>Draft generated for {topic} topic</h4>
+        <p className='border to-blue-100 draft m-2'> {draft} </p>
+      </section>
+    </>
   )
 
 }

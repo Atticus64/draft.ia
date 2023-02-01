@@ -7,6 +7,9 @@ export function TopicContextProvider({children}){
   const [topic, setTopic] = useState("")
   const [iaPrompt, setAiprompt] = useState(`generate a draft about the topic ${topic}`)
   const [draft, setDraft] = useState("")
+  const [options, setOptions] = useState({
+    edit: false
+  })
 
   function updateTopic(newTopic) {
     setTopic(newTopic)
@@ -26,7 +29,7 @@ export function TopicContextProvider({children}){
 
 
   return (
-    <TopicContext.Provider value={{topic, updateTopic, setTopic, draft, updateDraft, iaPrompt, updateAiprompt}}>
+    <TopicContext.Provider value={{topic, updateTopic, setTopic, draft, updateDraft, iaPrompt, updateAiprompt, options, setOptions}}>
       {children}
     </TopicContext.Provider>
   )
