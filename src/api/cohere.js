@@ -24,8 +24,6 @@ export const getDraft = async (prompt) => {
     },
     body: JSON.stringify(data)
   })
-  const g = await rawGeneration.json()
-  const { generations } = g
-  const draft = generations[0].text
-  return draft
+  const { generations } = await rawGeneration.json()
+  return generations[0].text
 }
