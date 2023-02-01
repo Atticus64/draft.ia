@@ -14,7 +14,7 @@ export function useDraft(options) {
     let args;
     if (options.detailed) {
       const newPrompt = `generate a very explicative and detailed draft about the topic ${topic}`
-      args = [topic, newPrompt]
+      args = [newPrompt]
     } else {
       const userPrompt = `generate a draft about the topic ${topic}`
       args = [userPrompt]
