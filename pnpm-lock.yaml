@@ -16,6 +16,7 @@ specifiers:
   react-hook-form: 7.43.0
   react-tag-input: 6.8.1
   tailwindcss: ^3.2.4
+  wc-toast: ^1.2.9
 
 dependencies:
   '@astrojs/deno': 4.0.0_astro@2.0.2
@@ -33,6 +34,7 @@ dependencies:
   react-hook-form: 7.43.0_react@18.2.0
   react-tag-input: 6.8.1_p63asoso2whc55j5hjny3icwfi
   tailwindcss: 3.2.4
+  wc-toast: 1.2.9
 
 packages:
 
@@ -3811,6 +3813,10 @@ packages:
 
   /vscode-uri/3.0.7:
     resolution: {integrity: sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==}
+    dev: false
+
+  /wc-toast/1.2.9:
+    resolution: {integrity: sha512-cwYwKCLqezlNrMkXFEQg/4VzBuPBMn8nEDWvAOcw5AfutkoWCCa28li9tpcM9s/ITRL18lVsdeR6HzUQAqFVKA==}
     dev: false
 
   /wcwidth/1.0.1:

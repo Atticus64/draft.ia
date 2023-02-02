@@ -7,15 +7,15 @@ import { TopicContext } from "../context/TopicContext"
 import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { useEffect } from "react"
-import confetti from "canvas-confetti"
-import { useDraft } from "../hooks/useDraft"
+import { toast } from 'wc-toast'
 
 function updateClipboard(newClip) {
   navigator.clipboard.writeText(newClip).then(() => {
     /* clipboard successfully set */
-    confetti()
+    toast.success('copied to clipboard')
   }, (err) => {
-    draftHtml
+    toast.success('Error to copy to clipboard')
+    throw err
     /* clipboar updateClipboard()d write failed */
   });
 }
@@ -33,15 +33,13 @@ export default function Form(){
   const handleCopyDraft = () => {
     const draftHtml = document.querySelector('.draft')
     const btn = document.querySelector('.btn-copy')
-    const dialogDraft = document.querySelector('.modal-draft')
     
-    btn.ariaLabel = "Copied"
-    btn.classList.add('hint--success')
-
     if ( !draftHtml ){
-      dialogDraft.showModal()
+      toast.error('No draft to copy')
       return
     }
+    btn.ariaLabel = "Copied"
+    btn.classList.add('hint--success')
     
     const copyContent = draftHtml.textContent.trim()
     updateClipboard(copyContent)
@@ -50,10 +48,9 @@ export default function Form(){
   function handleClick(event){
     event.preventDefault()
 
-    const dialog = document.querySelector('.modal-topic')
     input = document.querySelector('.input').value  
     if ( input === '' ){
-      dialog.showModal()
+      toast.error('Missing topic to generate draft')
       return 
     }
     const btn = document.querySelector('.send') 
@@ -99,18 +96,7 @@ export default function Form(){
   return (
     <>
       <section className="grid max-w-sm">
-          <Modal 
-            idn="topic"
-            message="Missing name of topic" 
-            width="w-44"
-            height="h-44"
-            />
-          <Modal 
-            height="h-30"
-            width="w-44"
-            idn="draft" 
-            message="No Draft to copy"  
-          />
+          <wc-toast></wc-toast>
           <h2 className="font-semibold text-3xl">Draft on the fly!!</h2>
           <form className="grid place-content-center ">
             <label htmlFor="topic" className="mt-2">Topic</label>
