@@ -64,21 +64,26 @@ const links: Link[] = [
           clip-rule="evenodd"></path></svg
       >
     </button>
-    <div class="hidden mobile-menu mt-2">
-      <ul class="flex">
+    <div
+      class="hidden mobile-menu w-full md:flex md:items-center md:w-auto justify-center align-middle"
+      id="menu"
+    >
+      <uljjj
+        class="text-base flex items-center flex-col text-gray-700 pt-4 md:flex md:justify-between md:pt-0"
+      >
         {
           links.map((link) => (
             <li>
               <a
                 href={link.url}
-                class="py-4 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent hover-underline-animation  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="py-4 text-xl pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent hover-underline-animation md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 {link.name}
               </a>
             </li>
           ))
         }
-      </ul>
+      </uljjj>
     </div>
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul
@@ -89,7 +94,7 @@ const links: Link[] = [
             <li>
               <a
                 href={link.url}
-                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent hover-underline-animation  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 text-xl pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent hover-underline-animation  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 {link.name}
               </a>
@@ -101,6 +106,18 @@ const links: Link[] = [
     </div>
   </div>
 </nav>
+
+<style>
+  li {
+    list-style: none;
+  }
+
+  @media (min-width: 765px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+</style>
 
 <script>
   const btnNav = document.querySelector(".nav-burger")
