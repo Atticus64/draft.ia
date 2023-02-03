@@ -41,7 +41,7 @@ export function Draft({ options }){
 
     <>
       <section className='container p-2 m-4 draft justify-center'>
-        <h4 className='text-2xl font-bold'>Draft generated for {topic} topic</h4>
+        <h4 className='text-xl font-bold'>Draft generated for {topic} topic</h4>
         <p className='border to-blue-100 draft m-2'> {draft} </p>
       </section>
     </>

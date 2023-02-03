@@ -20,6 +20,7 @@
 
 .prompt-preview {
   width: 19rem;
+  word-break: break-all;
 }
 
 .disable {
