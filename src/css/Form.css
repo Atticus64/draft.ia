@@ -1,7 +1,10 @@
+:root {
+  --send_width: 18rem
+}
 
 .activated {
   background-color: #bae6fd;
-  width: 12rem;
+  width: var(--send_width);
   margin-left: 0.3rem;
   margin-right: 0.3rem;
 }
@@ -16,14 +19,14 @@
 }
 
 .prompt-preview {
-  width: 15rem;
+  width: 19rem;
 }
 
 .disable {
   background-color: #cecece;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-   width: 12rem;
+  width: var(--send_width);
 }
 
 

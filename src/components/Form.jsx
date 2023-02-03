@@ -21,7 +21,7 @@ function updateClipboard(newClip) {
 
 export default function Form(){
 
-  const  { topic, updateTopic, iaPrompt, setTopic } = useContext(TopicContext)
+  const  { topic, updateTopic, iaPrompt } = useContext(TopicContext)
   const { register, watch } = useForm();
   const data = watch('name')
 
@@ -94,15 +94,15 @@ export default function Form(){
   
   return (
     <>
-      <section className="grid">
+      <section className="grid container">
           <wc-toast></wc-toast>
           <h2 className="font-semibold text-3xl">Draft on the fly!!</h2>
-          <form className="grid place-content-center">
+          <form className="grid place-content-center w-full">
             <label htmlFor="topic" className="mt-2">Topic</label>
-            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa" className="w-80 h-24 p-4 input" type="text" /> 
+            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa" className="w-96 h-24 p-4 input" type="text" /> 
             <label htmlFor="prompt" className="mt-2">Prompt</label>
           </form>
-          <div className="flex flex-row">
+          <div className="flex flex-row w-96">
             <blockquote className="p-2 justify-center align-middle prompt-preview border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800" id="prompt" >
               <p className="prompt-user bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">{iaPrompt}{data}</p>
             </blockquote>
@@ -111,11 +111,11 @@ export default function Form(){
             </button>
           </div>
         </section>
-        <div className="flex">
-          <Button onClick={handleClick} className="w-80 send activated">
+        <div className="flex flex-row w-96">
+          <Button onClick={handleClick} className="w-max send activated">
             Send
           </Button>
-          <button className="btn-copy mt-4 hint--top" onClick={handleCopyDraft} aria-label="Copy to clipboard">
+          <button className="btn-copy mt-6 hint--top" onClick={handleCopyDraft} aria-label="Copy to clipboard">
             <svg xmlns="http://www.w3.org/2000/svg" width="2.3em" height="2.3em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2v2Z"/></svg>
           </button>
         </div>
