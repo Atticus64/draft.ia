@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import App from "../components/App"
+import Navbar from "../components/Navbar.astro"
 ---
 
 <Layout title="Draft.ia">
+  <Navbar />
   <main class="flex justify-center flex-col items-center">
     <h1>Draft.ia</h1>
     <App client:load />
