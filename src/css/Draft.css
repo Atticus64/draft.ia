@@ -92,12 +92,10 @@
   background-image: linear-gradient(0deg, rgb(29, 44, 244) 0%, rgb(63, 199, 252) 100%);
 }
 
-
-
 .loader::after {
   width:  85%;
   height: 85%;
-  background-color: #fff;
+  background-color: var(--bg-color);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -6,7 +6,9 @@ import Navbar from "../components/Navbar.astro"
 
 <Layout title="Draft.ia">
   <Navbar />
-  <main class="flex justify-center flex-col items-center">
+  <main
+    class="flex justify-center flex-col items-center dark:bg-slate-800 dark:text-white"
+  >
     <h1>Draft.ia</h1>
     <App client:load />
   </main>

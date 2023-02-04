@@ -11,7 +11,13 @@ import { toast } from 'wc-toast'
 function updateClipboard(newClip) {
   navigator.clipboard.writeText(newClip).then(() => {
     /* clipboard successfully set */
-    toast.success('copied to clipboard')
+    const color = document.documentElement.style.getPropertyValue("--bg-color") 
+    const scheme = color === '#1e293b' ? 'dark' : 'light'
+    toast.success('copied to clipboard', {
+      theme: {
+        type: scheme
+      }
+    })
   }, (err) => {
     toast.success('Error to copy to clipboard')
     throw err
@@ -34,7 +40,13 @@ export default function Form(){
     const btn = document.querySelector('.btn-copy')
     
     if ( !draftHtml ){
-      toast.error('No draft to copy')
+      const color = document.documentElement.style.getPropertyValue("--bg-color") 
+      const scheme = color === '#1e293b' ? 'dark' : 'light'
+      toast.error('No draft to copy', {
+        theme: {
+          type: scheme
+        }
+      })
       return
     }
     btn.ariaLabel = "Copied"
@@ -49,7 +61,13 @@ export default function Form(){
 
     input = document.querySelector('.input').value  
     if ( input === '' ){
-      toast.error('Missing topic to generate draft')
+      const color = document.documentElement.style.getPropertyValue("--bg-color") 
+      const scheme = color === '#1e293b' ? 'dark' : 'light'
+      toast.error('Missing topic to generate draft', {
+        theme: {
+          type: scheme
+        }  
+      })
       return 
     }
     const btn = document.querySelector('.send') 
@@ -99,23 +117,23 @@ export default function Form(){
           <h2 className="font-semibold text-3xl">Draft on the fly!!</h2>
           <form className="grid place-content-center w-full">
             <label htmlFor="topic" className="mt-2">Topic</label>
-            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa" className="w-96 h-24 p-4 input" type="text" /> 
+            <textarea id="topic" required {...register("name")} style={{"resize": "none"}} autoFocus placeholder="type your topic, like neovim editor, history of rustlang, alamo usa" className="w-96 h-24 p-4 input appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" /> 
             <label htmlFor="prompt" className="mt-2">Prompt</label>
           </form>
           <div className="flex flex-row w-96">
             <blockquote className="p-2 justify-center align-middle prompt-preview border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800" id="prompt" >
               <p className="prompt-user bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">{iaPrompt}{data}</p>
             </blockquote>
-            <button className="hint--top" onClick={handleEditPrompt} aria-label="Edit prompt">
+            <button className="hint--top dark:text-gray-500" onClick={handleEditPrompt} aria-label="Edit prompt">
               <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 256 256"><path fill="currentColor" d="m229.7 58.3l-32-32a8.1 8.1 0 0 0-11.4 0l-96 96A8.1 8.1 0 0 0 88 128v32a8 8 0 0 0 8 8h32a8.1 8.1 0 0 0 5.7-2.3l96-96a8.1 8.1 0 0 0 0-11.4Zm-105 93.7H104v-20.7l64-64L188.7 88ZM200 76.7L179.3 56L192 43.3L212.7 64Zm24 43.3v88a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h88a8 8 0 0 1 0 16H48v160h160v-88a8 8 0 0 1 16 0Z"/></svg>
             </button>
           </div>
         </section>
         <div className="flex flex-row w-96">
-          <Button onClick={handleClick} className="w-max send activated">
+          <Button onClick={handleClick} className="w-max send activated dark:text-black">
             Send
           </Button>
-          <button className="btn-copy mt-6 hint--top" onClick={handleCopyDraft} aria-label="Copy to clipboard">
+          <button className="btn-copy mt-6 hint--top dark:text-gray-500" onClick={handleCopyDraft} aria-label="Copy to clipboard">
             <svg xmlns="http://www.w3.org/2000/svg" width="2.3em" height="2.3em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2v2Z"/></svg>
           </button>
         </div>

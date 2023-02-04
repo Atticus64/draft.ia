@@ -45,3 +45,23 @@ const { title } = Astro.props
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 </style>
+
+<script>
+  const btnDark = document.getElementById("button-dark")
+  const btnLight = document.getElementById("button-light")
+
+  if (
+    localStorage.getItem("color-theme") === "dark" ||
+    (!("color-theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark")
+    document.documentElement.style.backgroundColor = "#1e293b"
+    document.documentElement.style.setProperty("--bg-color", "#1e293b")
+    btnDark.classList.toggle("hidden")
+  } else {
+    document.documentElement.classList.remove("dark")
+    document.documentElement.style.setProperty("--bg-color", "#f6f6f6")
+    btnLight.classList.toggle("hidden")
+  }
+</script>
