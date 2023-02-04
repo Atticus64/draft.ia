@@ -9,9 +9,6 @@
   margin-right: 0.3rem;
 }
 
-.btn-copy:hover {
-  transform: scale(1.20);
-}
 
 .activated:hover {
   background-color: #60a5fa;
