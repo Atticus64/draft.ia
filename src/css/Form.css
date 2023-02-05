@@ -1,12 +1,20 @@
 :root {
-  --send_width: 24em
+  --send-width: 24em;
+  --btn-width: calc((var(--send-width))/2);
 }
 
 .activated {
   background-color: #bae6fd;
-  width: var(--send_width);
+  width: var(--send-width);
 }
 
+.btn-copy {
+  width: var(--btn-width);
+}
+
+.btn-edit {
+  width: var(--btn-width);
+}
 
 .activated:hover {
   background-color: #60a5fa;
@@ -22,26 +30,26 @@
   background-color: #cecece;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
-  width: var(--send_width);
+  width: var(--send-width);
 }
 
 
 @media (max-width: 415px) {
   :root {
-    --send_width: 15em
+    --send-width: 15em
   }
 
   .form {
-    width: var(--send_width);
+    width: var(--send-width);
   }
 
   .input {
-    width: var(--send_width);
+    width: var(--send-width);
   }
 
   .activated {
     background-color: #bae6fd;
-    width: var(--send_width);
+    width: var(--send-width);
   }
 
 
@@ -51,7 +59,7 @@
   }
 
   .prompt-preview {
-    width: var(--send_width);
+    width: var(--send-width);
     word-break: break-all;
   }
 
@@ -59,7 +67,7 @@
     background-color: #cecece;
     margin-left: 0.3rem;
     margin-right: 0.3rem;
-    width: var(--send_width);
+    width: var(--send-width);
   }
 
 
