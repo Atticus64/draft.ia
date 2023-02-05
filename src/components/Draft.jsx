@@ -40,9 +40,13 @@ export function Draft({ options }){
   return (
 
     <>
-      <section className='container p-2 m-4 draft justify-center dark:bg-slate-800'>
+      <section className='container p-2 m-4 justify-center dark:bg-slate-800'>
         <h4 className='text-xl font-bold'>Draft generated for {topic} topic</h4>
-        <p className='border to-blue-100 draft m-2'> {draft} </p>
+        <div className='draft m-2'>
+          {draft.split('\n').map(
+            (d, i) => <p key={i}>{d}</p>
+          )}
+        </div>
       </section>
     </>
   )

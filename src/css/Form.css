@@ -1,12 +1,10 @@
 :root {
-  --send_width: 18rem
+  --send_width: 24em
 }
 
 .activated {
   background-color: #bae6fd;
   width: var(--send_width);
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
 }
 
 
@@ -16,7 +14,7 @@
 }
 
 .prompt-preview {
-  width: 19rem;
+  width: 25em;
   word-break: break-all;
 }
 
@@ -28,4 +26,42 @@
 }
 
 
+@media (max-width: 415px) {
+  :root {
+    --send_width: 15em
+  }
 
+  .form {
+    width: var(--send_width);
+  }
+
+  .input {
+    width: var(--send_width);
+  }
+
+  .activated {
+    background-color: #bae6fd;
+    width: var(--send_width);
+  }
+
+
+  .activated:hover {
+    background-color: #60a5fa;
+    transform: scale(1.05);
+  }
+
+  .prompt-preview {
+    width: var(--send_width);
+    word-break: break-all;
+  }
+
+  .disable {
+    background-color: #cecece;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    width: var(--send_width);
+  }
+
+
+
+}
