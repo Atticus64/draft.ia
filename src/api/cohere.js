@@ -1,6 +1,10 @@
 
-export const getDraft = async (prompt) => {
+export const getDraft = async (prompt, num_gen) => {
   const apikey = import.meta.env.PUBLIC_COHERE_APIKEY
+
+  if (num_gen > 5) return
+
+  const num_generations = num_gen ?? 1
 
   const data = {
     model: 'command-xlarge-20221108',
@@ -10,6 +14,7 @@ export const getDraft = async (prompt) => {
     k: 0,
     p: 1,
     frequency_penalty: 0,
+    num_generations,
     presence_penalty: 0,
     stop_sequences: ['--'],
     return_likelihoods: 'NONE'
@@ -25,5 +30,5 @@ export const getDraft = async (prompt) => {
     body: JSON.stringify(data)
   })
   const { generations } = await rawGeneration.json()
-  return generations[0].text
+  return generations
 }

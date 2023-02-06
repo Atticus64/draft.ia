@@ -1,10 +1,11 @@
 import { useContext } from "react"
 import { useEffect, useState } from "react"
+import { toast } from "wc-toast"
 import { getDraft } from "../api/cohere"
 import { TopicContext } from "../context/TopicContext"
 
 export function useDraft(options) {
-  const { draft, updateDraft, topic } = useContext(TopicContext)
+  const { draft, updateDraft, topic, numDrafts } = useContext(TopicContext)
   const [isLoadingDraft, setIsLoadingDraft] = useState(null)
 
   useEffect(() => {
@@ -12,17 +13,12 @@ export function useDraft(options) {
     setIsLoadingDraft(true)
     let userPrompt;
 
-    // const DEFAULT_PROMPT = "generate a draft about the topic"
-    // const customPrompt = document.querySelector('.prompt-user').textContent.split(' ').slice(0, 6).join(' ')
-    // if (customPrompt !== DEFAULT_PROMPT) {
-    //   const newPrompt = document.querySelector('.prompt-user')
-
-    // } else {
-    //   userPrompt = `generate a draft about the topic ${topic}`
-    // }
     userPrompt = document.querySelector('.prompt-user').textContent
 
-    getDraft(userPrompt).then(draft => {
+    if (numDrafts > 5) {
+      toast.error("You cant get drafts more 5")
+    }
+    getDraft(userPrompt, numDrafts).then(draft => {
 
       const btn = document.querySelector('.send')
       updateDraft(draft)
