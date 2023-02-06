@@ -1,5 +1,5 @@
 <footer
-  class="flex bottom-0 justify-around bg-white dark:text-white border-gray-200 px-2 py-4 xl:w-full dark:bg-gray-900"
+  class="flex footer bottom-0 justify-around bg-white dark:text-white border-gray-200 px-2 py-4 w-full dark:bg-gray-900 mobile-lay"
 >
   <a
     href="https://cohere.ai/"
@@ -30,12 +30,44 @@
 </footer>
 
 <style>
-  li {
-    list-style: none;
+  html {
+    height: 100%;
+    box-sizing: border-box;
   }
 
-  footer {
-    position: fixed;
-    width: 2rem;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+
+  @media (max-width: 530px) {
+    .mobile-lay {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    a {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 </style>
