@@ -201,8 +201,16 @@ const links: Link[] = [
     } else {
       if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.remove("dark")
+        document.documentElement.style.backgroundColor = "#f6f6f6"
+        document.documentElement.style.setProperty("--bg-color", "#f6f6f6")
+        btnLight.classList.toggle("hidden")
+        btnDark.classList.toggle("hidden")
         localStorage.setItem("color-theme", "light")
       } else {
+        btnLight.classList.toggle("hidden")
+        btnDark.classList.toggle("hidden")
+        document.documentElement.style.backgroundColor = "#1e293b"
+        document.documentElement.style.setProperty("--bg-color", "#1e293b")
         document.documentElement.classList.add("dark")
         localStorage.setItem("color-theme", "dark")
       }
