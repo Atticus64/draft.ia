@@ -75,7 +75,7 @@ export function Draft({ options }){
         btn.ariaLabel = "Copied"
         btn.classList.add('hint--success')
     
-        const copyContent = draftHtml.textContent.trim()
+        const copyContent = draftHtml.textContent
         updateClipboard(copyContent)
       }
       function updateClipboard(newClip) {
