@@ -1,0 +1,84 @@
+---
+const { className } = Astro.props
+---
+
+<div class={`preview p-2 ml-6 w-96 ${className}`}>
+  <h3 class="text-[16px] type typing-text">
+    Generate a draft about JavaScript
+  </h3>
+  <div class="cont-prev flex justify-center align-middle ml-10">
+    <blockquote
+      class="text-[15px] text-gray-900 mt-2 w-96 bg-gray-50 rounded-lg p-4 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 draft-prev flex justify-center self-center items-center duration-[2900ms] ease-in opacity-0 transition-opacity"
+    >
+      The JavaScript language is a high-level, interpreted, programming
+      language. It is one of the most popular languages in use today, and is the
+      main programming language used in web development. JavaScript is a
+      prototype-based, multi-paradigm language that supports object-oriented,
+      imperative, and functional programming styles It is a very versatile
+      language, and is used for a wide range of applications, from simple web
+      pages to complex web applications and games. JavaScript is also used in
+      many non-web environments, such as for server-side development and in the
+      creation of desktop and mobile applications.
+    </blockquote>
+  </div>
+</div>
+
+<script>
+  const previewText = document.querySelector(".draft-prev")
+  previewText.classList.toggle("opacity-100")
+</script>
+
+<style>
+  h3 {
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 34ch;
+    margin-left: 3.3rem;
+
+    animation: typing 1.3s steps(34), blink 0.5s infinite;
+    overflow: hidden;
+  }
+
+  .cont-prev {
+    width: 25rem;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @media (max-width: 1070px) {
+    .cont-prev {
+      margin: 0;
+    }
+
+    .typing-text {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    h3 {
+      margin-left: 0;
+    }
+    .typing-text {
+      width: 19em;
+      word-break: break-all;
+    }
+
+    .cont-prev {
+      margin: 0;
+      width: 30ch;
+    }
+  }
+</style>

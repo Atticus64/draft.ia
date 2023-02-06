@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro"
+import App from "../components/App"
+import Navbar from "../components/Navbar.astro"
+---
+
+<Layout title="Draft.ia">
+  <Navbar />
+  <main
+    class="flex justify-center flex-col items-center dark:bg-slate-800 dark:text-white"
+  >
+    <h1>Draft.ia</h1>
+    <App client:load />
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  textarea,
+  input {
+    outline: none;
+  }
+</style>

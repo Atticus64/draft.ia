@@ -110,7 +110,7 @@ export function Draft({ options }){
                   </div>
                   <button id={indx+1} className="btn-copy h-12 rounded flex flex-grow p-2 w-[12em] justify-center items-center ml-2 hint--top dark:text-white bg-cyan-200 hover:bg-cyan-400 dark:bg-cyan-900 dark:hover:bg-cyan-600" onClick={handleCopyDraft} aria-label="Copy to clipboard">
                   <svg id={indx+1} xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2v2Z" /></svg>
-                   <div className="m-2">
+                   <div className="m-2" id={indx+1}>
                     Copy
                    </div>
                   </button>                    

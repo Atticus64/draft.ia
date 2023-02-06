@@ -8,16 +8,8 @@ interface Link {
 
 const links: Link[] = [
   {
-    name: "About",
-    url: "/about",
-  },
-  {
-    name: "Draft app",
-    url: "/",
-  },
-  {
-    name: "Landing",
-    url: "/landing",
+    name: "Draft App",
+    url: "/app",
   },
 ]
 ---
@@ -145,75 +137,75 @@ const links: Link[] = [
       </ul>
     </div>
   </div>
-
-  <style>
-    li {
-      list-style: none;
-    }
-
-    @media (max-width: 765px) {
-      .nav-mobile {
-        display: flex;
-        justify-content: space-between;
-      }
-    }
-
-    @media (min-width: 765px) {
-      .mobile-menu {
-        display: none;
-      }
-      .mobile-theme {
-        display: none;
-      }
-
-      .nav-mobile {
-        justify-content: space-around;
-      }
-    }
-  </style>
-
-  <script>
-    const btnNav = document.querySelector(".nav-burger")
-    const menu = document.querySelector(".mobile-menu")
-    const btnTheme = document.querySelector(".theme")
-    const btnDark = document.getElementById("button-dark")
-    const btnLight = document.getElementById("button-light")
-
-    btnDark.classList.toggle("hidden")
-    btnLight.classList.toggle("hidden")
-
-    btnNav.addEventListener("click", () => {
-      menu.classList.toggle("hidden")
-    })
-
-    btnTheme.addEventListener("click", () => {
-      if (localStorage.getItem("color-theme")) {
-        if (localStorage.getItem("color-theme") === "light") {
-          btnLight.classList.toggle("hidden")
-          btnDark.classList.toggle("hidden")
-          document.documentElement.style.backgroundColor = "#1e293b"
-          document.documentElement.style.setProperty("--bg-color", "#1e293b")
-          document.documentElement.classList.add("dark")
-          localStorage.setItem("color-theme", "dark")
-        } else {
-          document.documentElement.classList.remove("dark")
-          document.documentElement.style.backgroundColor = "#f6f6f6"
-          document.documentElement.style.setProperty("--bg-color", "#f6f6f6")
-          btnLight.classList.toggle("hidden")
-          btnDark.classList.toggle("hidden")
-          localStorage.setItem("color-theme", "light")
-        }
-
-        // if NOT set via local storage previously
-      } else {
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark")
-          localStorage.setItem("color-theme", "light")
-        } else {
-          document.documentElement.classList.add("dark")
-          localStorage.setItem("color-theme", "dark")
-        }
-      }
-    })
-  </script>
 </nav>
+
+<style>
+  li {
+    list-style: none;
+  }
+
+  @media (max-width: 765px) {
+    .nav-mobile {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: 765px) {
+    .mobile-menu {
+      display: none;
+    }
+    .mobile-theme {
+      display: none;
+    }
+
+    .nav-mobile {
+      justify-content: space-around;
+    }
+  }
+</style>
+
+<script>
+  const btnNav = document.querySelector(".nav-burger")
+  const menu = document.querySelector(".mobile-menu")
+  const btnTheme = document.querySelector(".theme")
+  const btnDark = document.getElementById("button-dark")
+  const btnLight = document.getElementById("button-light")
+
+  btnDark.classList.toggle("hidden")
+  btnLight.classList.toggle("hidden")
+
+  btnNav.addEventListener("click", () => {
+    menu.classList.toggle("hidden")
+  })
+
+  btnTheme.addEventListener("click", () => {
+    if (localStorage.getItem("color-theme")) {
+      if (localStorage.getItem("color-theme") === "light") {
+        btnLight.classList.toggle("hidden")
+        btnDark.classList.toggle("hidden")
+        document.documentElement.style.backgroundColor = "#1e293b"
+        document.documentElement.style.setProperty("--bg-color", "#1e293b")
+        document.documentElement.classList.add("dark")
+        localStorage.setItem("color-theme", "dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+        document.documentElement.style.backgroundColor = "#f6f6f6"
+        document.documentElement.style.setProperty("--bg-color", "#f6f6f6")
+        btnLight.classList.toggle("hidden")
+        btnDark.classList.toggle("hidden")
+        localStorage.setItem("color-theme", "light")
+      }
+
+      // if NOT set via local storage previously
+    } else {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark")
+        localStorage.setItem("color-theme", "light")
+      } else {
+        document.documentElement.classList.add("dark")
+        localStorage.setItem("color-theme", "dark")
+      }
+    }
+  })
+</script>
