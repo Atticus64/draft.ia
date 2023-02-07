@@ -1,10 +1,9 @@
-import React from 'react'
 
 export function DarkMoon({id}) {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="hidden"
+    className="hidden"
     id={id}
     width="2em"
     height="2em"
