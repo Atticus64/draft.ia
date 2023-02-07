@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
+    "//": "mi comentario",
+    "//": "otro comentario",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
