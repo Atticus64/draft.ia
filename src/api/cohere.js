@@ -7,7 +7,7 @@ export const getDraft = async (prompt, num_gen) => {
   const num_generations = num_gen ?? 1
 
   const data = {
-    model: 'command-xlarge-20221108',
+    model: 'command',
     prompt,
     max_tokens: 300,
     temperature: 0.8,
@@ -20,7 +20,7 @@ export const getDraft = async (prompt, num_gen) => {
     return_likelihoods: 'NONE'
   }
 
-  const rawGeneration = await fetch("https://api.cohere.ai/generate", {
+  const rawGeneration = await fetch("https://api.cohere.ai/v1/generate", {
     method: 'POST',
     headers: {
       Authorization: `BAERER ${apikey}`,
